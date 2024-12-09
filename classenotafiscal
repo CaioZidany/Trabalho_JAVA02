@@ -1,57 +1,51 @@
-import java.util.Scanner;
+[21:33, 08/12/2024] +55 83 9179-1616: public class NotaFiscal {
+    class NotaFiscal {
+        private String numero;
+        private Cliente cliente;
+        private Veiculo veiculo;
 
-public class FichaVendaVeiculo {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        public NotaFiscal(String numero, Cliente cliente, Veiculo veiculo) {
+            this.numero = numero;
+            this.cliente = cliente;
+            this.veiculo = veiculo;
+        }
 
-        System.out.println("=== Ficha do Cliente ===");
-        System.out.print("Digite o nome do cliente: ");
-        String nomeCliente = scanner.nextLine();
+        public void imprimirNota() {
+            System.out.println("Nota Fiscal: " + numero);
+            System.out.println(cliente);
+            System.out.println(veiculo);
+            System.out.println("Total: R$" + veiculo.getPreco());
+        }
+    }
+}
+[21:33, 08/12/2024] +55 83 9179-1616: veiculo
+[21:33, 08/12/2024] +55 83 9179-1616: public class Veiculo {
+    class Veiculo {
+        private String modelo;
+        private String marca;
+        private double preco;
 
-        System.out.print("Digite o CPF do cliente: ");
-        String cpfCliente = scanner.nextLine();
+        public Veiculo(String modelo, String marca, double preco) {
+            this.modelo = modelo;
+            this.marca = marca;
+            this.preco = preco;
+        }
 
-        System.out.print("Digite o telefone do cliente: ");
-        String telefoneCliente = scanner.nextLine();
+        public String getModelo() {
+            return modelo;
+        }
 
-        System.out.println("\n=== Ficha de Venda de Veículo ===");
-        System.out.print("Digite o modelo do veículo: ");
-        String modelo = scanner.nextLine();
+        public String getMarca() {
+            return marca;
+        }
 
-        System.out.print("Digite a marca do veículo: ");
-        String marca = scanner.nextLine();
+        public double getPreco() {
+            return preco;
+        }
 
-        System.out.print("Digite o ano de fabricação: ");
-        int ano = scanner.nextInt();
-        scanner.nextLine(); 
-
-        System.out.print("Digite a cor do veículo: ");
-        String cor = scanner.nextLine();
-
-        System.out.print("Digite o preço do veículo (em R$): ");
-        double preco = scanner.nextDouble();
-
-        System.out.println("\n=== Ficha Completa ===");
-        System.out.println("=== Dados do Cliente ===");
-        System.out.println("Nome: " + nomeCliente);
-        System.out.println("CPF: " + cpfCliente);
-        System.out.println("Telefone: " + telefoneCliente);
-
-        System.out.println("\n=== Dados do Veículo ===");
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Marca: " + marca);
-        System.out.println("Ano de fabricação: " + ano);
-        System.out.println("Cor: " + cor);
-        System.out.printf("Preço: R$ %.2f%n", preco);
-
-        System.out.println("\n=== Comprovante de Venda ===");
-        System.out.println("Cliente: " + nomeCliente);
-        System.out.println("CPF: " + cpfCliente);
-        System.out.println("Veículo: " + modelo + " (" + marca + "), Ano: " + ano + ", Cor: " + cor);
-        System.out.printf("Valor da Venda: R$ %.2f%n", preco);
-        System.out.println("Status: Venda confirmada com sucesso!");
-        System.out.println("Obrigado por comprar conosco!");
-
-        scanner.close();
+        @Override
+        public String toString() {
+            return "Veículo: " + marca + " " + modelo + " - R$" + preco;
+        }
     }
 }
