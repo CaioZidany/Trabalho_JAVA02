@@ -1,0 +1,14 @@
+public class Venda {
+    private Cliente cliente;
+    private Veiculo veiculo;
+
+    public Venda(Cliente cliente, Veiculo veiculo) {
+        this.cliente = cliente;
+        this.veiculo = veiculo;
+    }
+
+    public NotaFiscal processarVenda() {
+        String numeroNota = "NF" + System.currentTimeMillis();
+        return new NotaFiscal(numeroNota, cliente, veiculo);
+    }
+}
