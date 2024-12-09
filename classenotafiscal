@@ -1,4 +1,4 @@
-[21:33, 08/12/2024] +55 83 9179-1616: public class NotaFiscal {
+ public class NotaFiscal {
     class NotaFiscal {
         private String numero;
         private Cliente cliente;
